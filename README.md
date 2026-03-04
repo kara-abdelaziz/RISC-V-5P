@@ -3,6 +3,16 @@ This open-source project is an implementation of the modern an growing in popula
 
 ![alt text](images/cpu.png)
 
+### 🎨 Architecture Color Map
+
+| Color | Module Type | Description |
+| :---: | :--- | :--- |
+| 🔵 | **Memory / Storage** | ROM (Instruction), RAM (Data), and Register File (RF) |
+| 🔴 | **Arithmetic** | ALU, Adders, and Comparators |
+| 🟦 | **Control & Routing** | Control Unit, Forwarding Logic, and Multiplexers |
+| 🟢 | **Hazards** | No-sequence / Stall Detection |
+| ⚪ | **System** | Trap Manager and Zicsr Extension |
+
 ## Instruction Set Architecture (ISA)
 
 The processor can be described as a 5-stage pipelined RISC-V RV32I processor; it is a 32-bit processor with integer operations. The complete set of implemented instructions is shown in the table below. The processor implements only machine mode (m-mode), including privileged instructions from the Zicsr extension (CSRRW, CSRRS, CSRRC, CSRRWI, CSRRSI, CSRRCI) and other privileged instructions such as ECALL, EBREAK, MRET, and WFI.
