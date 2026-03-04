@@ -5,13 +5,12 @@ This open-source project is an implementation of the modern an growing in popula
 
 ### 🎨 Architecture Color Map
 
-| Color | Module Type | Description |
-| :---: | :--- | :--- |
-| 🔵 | **Memory / Storage** | ROM (Instruction), RAM (Data), and Register File (RF) |
-| 🔴 | **Arithmetic** | ALU, Adders, and Comparators |
-| 🟦 | **Control & Routing** | Control Unit, Forwarding Logic, and Multiplexers |
-| 🟢 | **Hazards** | No-sequence / Stall Detection |
-| ⚪ | **System** | Trap Manager and Zicsr Extension |
+- ![](https://img.shields.io/badge/-00FFFF?style=flat-square&color=00FFFF) **Memory Units** (ROM, RAM, RF)
+- ![](https://img.shields.io/badge/-FF0000?style=flat-square&color=FF0000) **ALU / Arithmetic**
+- ![](https://img.shields.io/badge/-0061FF?style=flat-square&color=0061FF) **Control & Forwarding**
+- ![](https://img.shields.io/badge/-33FF33?style=flat-square&color=33FF33) **Hazard Detection**
+- ![](https://img.shields.io/badge/-999999?style=flat-square&color=999999) **Trap & Zicsr**
+- ![](https://img.shields.io/badge/-FFFFFF?style=flat-square&color=FFFFFF) **Muxes & Gluelogic**
 
 ## Instruction Set Architecture (ISA)
 
