@@ -6,3 +6,5 @@ This open-source project is an implementation of the modern an growing in popula
 The processor can be described as a 5-stage pipelined RISC-V RV32I processor; it is a 32-bit processor with integer operations. The complete set of implemented instructions is shown in the table below. The processor implements only machine mode (m-mode), including privileged instructions from the Zicsr extension (CSRRW, CSRRS, CSRRC, CSRRWI, CSRRSI, CSRRCI) and other privileged instructions such as ECALL, EBREAK, MRET, and WFI.
 
 ![alt text](images/RV32I-ISA.jpg)
+
+The most important CSR registers are implemented; a list of all implemented registers is shown in the table below. The trap mechanism is implemented for interrupts and exceptions; interrupt connections are accessible, but no interrupt handler is implemented. However, the most common exceptions are implemented. A list of all exceptions is shown in the table below.
