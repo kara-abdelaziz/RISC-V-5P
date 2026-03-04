@@ -10,3 +10,13 @@ The processor can be described as a 5-stage pipelined RISC-V RV32I processor; it
 The most important CSR registers are implemented; a list of all implemented registers is shown in the table below. The trap mechanism is implemented for interrupts and exceptions; interrupt connections are accessible, but no interrupt handler is implemented. However, the most common exceptions are implemented. A list of all exceptions is shown in the table below.
 
 ![alt text](images/csr-exceptions.jpg)
+
+## Implementation
+
+As you can see on the [datapath](https://en.wikipedia.org/wiki/Datapath) (in the first image at the top), the processor is structured around the five standard stages of a pipelined processor: IF, ID, EXE, MEM, and WB. For clarity, a color code is used to distinguish the functions of the processor components. For example, the four purple bars represent the buffer registers separating the pipeline stages. The components in red represent the arithmetic units, such as the ALU, adders, sign-extenders, a shifter, and a comparator (the B cond, for Branch Condition). Multiplexers are in white, as are the gluegates. Memory, such as ROM, RAM, and the Register File (RF), are in light blue. The normal color blue represents the control units, the CU, and the forwarding manager. Hazard management units are in green. The Program Counter is in yellow. The units in gray are responsible for privileged mode, such as the implementation of the Zicsr extension and the trap manager.
+
+The implementation of the pipeline is relatively complex, which implicitly encourages the use of many other underlying techniques such as feed forwarding, stalling, branch prediction, pipeline flushing, hazard handling.
+
+## Testing and validation
+
+To ensure the processor functions correctly according to the official RISC-V [specifications](https://riscv.atlassian.net/wiki/spaces/HOME/pages/16154769/RISC-V+Technical+Specifications), we chose the official test suite provided by the [organization](https://riscv.org/), called the [riscv-tests](https://github.com/riscv-software-src/riscv-tests) suite. This is a set of unit tests designed to verify the functional correctness of RISC-V architecture implementations, specifically its [instruction set](https://en.wikipedia.org/wiki/Instruction_set_architecture). These assembly language tests verify the conformity of the instructions to the preferred RV32I architecture to guarantee that the designed processor meets the RISC-V specifications. The RISC-V 5P processor successfully passes the tests, except for the fence.i instruction, which is not implemented, and memory misalignment, for which we opted for a simpler software solution rather than a hardware one.
