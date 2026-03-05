@@ -21,19 +21,24 @@ To simulate this processor, you will need the **Digital** logic simulator.
 ### 1. Initial Setup
 1. Clone this repository: `git clone https://github.com/kara-abdelaziz/RISC-V-5P.git`, or download directly the zip file
 2. Open **Digital**.
-3. Go to `File -> Open` and select the main (top) circuit file `cpu.dig`.
+3. Go to `File -> Open` and select the main circuit file `cpu.dig`.
 
 ### 2. Loading the Program (Instruction ROM)
-There are two ways to load code into the Instruction Memory:
+By default, the ROM is already loaded by the [Dhrystone](https://en.wikipedia.org/wiki/Dhrystone) benchmark code, and it is possible to pass directly to start `Running the simulation`. But it is more interesting to load your proper program. There are two ways to load code into the Instruction Memory:
 
 #### Method A: Manual Entry
-Use this for short tests or debugging:
-1. **Right-click** the light-blue **ROM** component.
-2. Click on **Data**.
-3. Enter your hex machine code values manually into the table.
-4. Click **OK**.
+Use this for testing a specific instruction, short tests, or debugging:
+1. Accessing the light-blue **ROM** component by a right clicking, then by clicking the **Open Circuit** button.
+2. The ciruit `instructions rom.dig` will open, right click on **ROM**.
+3. On **Basic** onglet you have to click the **edit** button.
+4. Enter your hex machine code values manually into the table.
+5. Click **OK**, and don't forget to save `instructions rom.dig` circuit.
 
-#### Method B: Loading a Hex File (Recommended)
+Using this method, there are 2 files in `circuits` directory, containing the adequate code for testing specific instrcutions and small programs:
+1. [all instructions test.asm](circuits/all instructions test.asm): a small program with the coresponding hexademal machine code for each instrcution, that test all the instructions.
+2. [test_ROM.hex](circuits/test_ROM.hex): a collection of small program with the coresponding hexademal machine code, designed to test specific instructions.
+
+#### Method B: Loading a Hex File
 This is the fastest way to run the included `riscv-tests`. Digital supports **Logisim v2.0 raw** and **Intel Hex** formats.
 1. **Right-click** the light-blue **ROM** component.
 2. Click the **Folder Icon** 📂 next to the "Data File" field.
