@@ -1,5 +1,5 @@
 # RISC-V-5P
-This open-source project is an implementation of the modern an growing in popularity [RISC-V](https://en.wikipedia.org/wiki/RISC-V) processor, based on a [pipelined](https://en.wikipedia.org/wiki/Instruction_pipelining) microarchitecture that increases instruction execution speed. More specifically, it's an improvement on the previous [single-cycle](https://enesharman.medium.com/single-cycle-vs-multi-cycle-processors-1c5bf468c569) [RISC-V 1C](https://www.el-kalam.com/projets/processeur-risc-v-1c/) implementation of the same processor. What distinguishes this implementation from others found online is its visual nature (you can see its diagram in the image below), rather than its text-based (code-based) approach. It's designed for educational use within Helmut Hneemann's [Digital](https://github.com/hneemann/Digital) Logic Simulator, employing color coding and an organized layout to facilitate tracking signal flow within the processor's internal components during execution. It even allows step-by-step execution with full access to all internal processor entities, and all the data and information is probed throughout the datapath. Furthermore, the simulator can generate [Verilog](https://en.wikipedia.org/wiki/Verilog) or [VHDL](https://en.wikipedia.org/wiki/VHDL) code, enabling integration with standard hardware development tools. Included with this project, a slightly modified version of a source code for the processor in Verilog, used to be intergrated wtih the [FPGA](https://en.wikipedia.org/wiki/Field-programmable_gate_array), that allows to implement this processor in a real-world physical construction.
+This open-source project is an implementation of the modern and growing in popularity [RISC-V](https://en.wikipedia.org/wiki/RISC-V) processor, based on a [pipelined](https://en.wikipedia.org/wiki/Instruction_pipelining) microarchitecture that increases instruction execution speed. More specifically, it's an improvement on the previous [single-cycle](https://enesharman.medium.com/single-cycle-vs-multi-cycle-processors-1c5bf468c569) [RISC-V 1C](https://www.el-kalam.com/projets/processeur-risc-v-1c/) implementation of the same processor. What distinguishes this implementation from others found online is its visual nature (you can see its diagram in the image below), rather than its text-based (code-based) approach. It's designed for educational use within Helmut Hneemann's [Digital](https://github.com/hneemann/Digital) Logic Simulator, employing color coding and an organized layout to facilitate tracking signal flow within the processor's internal components during execution. It even allows step-by-step execution with full access to all internal processor entities, and all the data and information is probed throughout the datapath. Furthermore, the simulator can generate [Verilog](https://en.wikipedia.org/wiki/Verilog) or [VHDL](https://en.wikipedia.org/wiki/VHDL) code, enabling integration with standard hardware development tools. Included with this project, a slightly modified version of a source code for the processor in Verilog, used to be intergrated with the [FPGA](https://en.wikipedia.org/wiki/Field-programmable_gate_array), that allows to implement this processor in a real-world physical construction.
 
 ![alt text](screenshots/cpu.png)
 
@@ -8,6 +8,7 @@ This open-source project is an implementation of the modern an growing in popula
 - ![](https://img.shields.io/badge/-00FFFF?style=flat-square&color=00FFFF) **Memory Units** (ROM, RAM, RF)
 - ![](https://img.shields.io/badge/-FF0000?style=flat-square&color=FF0000) **ALU / Arithmetic**
 - ![](https://img.shields.io/badge/-0061FF?style=flat-square&color=0061FF) **Control & Forwarding**
+- ![](https://img.shields.io/badge/-E600FF?style=flat-square&color=E600FF) **Pipeline stages separation**
 - ![](https://img.shields.io/badge/-33FF33?style=flat-square&color=33FF33) **Hazard Detection**
 - ![](https://img.shields.io/badge/-999999?style=flat-square&color=999999) **Trap & Zicsr**
 - ![](https://img.shields.io/badge/-FFFFFF?style=flat-square&color=FFFFFF) **Muxes & Gluelogic**
@@ -30,11 +31,11 @@ By default, the ROM is already loaded by the [Dhrystone](https://en.wikipedia.or
 Use this for testing a specific instruction, short tests, or debugging:
 1. Reaching the light-blue **ROM** component by right-clicking (you probably need to select `instructions rom.dig`), then by clicking the **Open Circuit** button.
 2. The circuit `instructions rom.dig` will open, right-click on **ROM**.
-3. On **Basic** onglet you have to click the **edit** button.
+3. On **Basic** tab you have to click the **edit** button.
 4. Enter your hex machine code values manually into the table.
 5. Click **OK**, and don't forget to save `instructions rom.dig` circuit.
 
-Using this method, there are 2 files in `circuits` directory, containing the adequate code for testing specific instructions and small programs:
+Using this method, there are 2 files in `circuits` directory, containing the appropriate code for testing specific instructions and small programs:
 1. [all_instructions_test.asm](circuits/all_instructions_test.asm): a small program with the corresponding hexadecimal machine code for each instruction, that tests all the instructions.
 2. [test_ROM.hex](circuits/test_ROM.hex): a collection of small programs with the corresponding hexadecimal machine code, designed to test specific instructions.
 
@@ -42,12 +43,19 @@ Using this method, there are 2 files in `circuits` directory, containing the ade
 This is the fastest way to run large programs. Digital supports **Logisim v2.0 raw** and **Intel Hex** file formats.
 1. Reaching the light-blue **ROM** component by right-clicking (you probably need to select `instructions rom.dig`), then by clicking the **Open Circuit** button.
 2. The circuit `instructions rom.dig` will open, right-click on **ROM**.
-3. On **Advanced** onglet you have to check the **reload at model start** box.
+3. On **Advanced** tab you have to check the **reload at model start** box.
 4. Select your `.hex` in the **file** field.
 5. Click **OK**, and don't forget to save `instructions rom.dig` circuit.
 
-For this case, you have the directories `tests` and `benchmarks` containing many .hex files that could be loaded and executed directly. It is also possible to generate your own .hex file following one of the two formats **Logisim v2.0 raw** or **Intel Hex**. Files like **Logisim v2.0 raw** could be generated with the help of the linux script [convert_to_hex.sh](tests/convert_to_hex.sh) in `tests` directory. It was used to convert .dump files of the [riscv-tests](https://github.com/riscv-software-src/riscv-tests) suite to .hex files. You can also use the **Intel Hex** file format by using the official RISC-V toolchain and compiler [riscv-gnu-toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain), containing some specific tools allowing the generation of **Intel Hex** file format.
+In this case, you have the directories `tests` and `benchmarks` containing many .hex files that could be loaded and executed directly. It is also possible to generate your own .hex file following one of the two formats **Logisim v2.0 raw** or **Intel Hex**. Files like **Logisim v2.0 raw** could be generated with the help of the linux script [convert_to_hex.sh](tests/convert_to_hex.sh) in `tests` directory. It was used to convert .dump files of the [riscv-tests](https://github.com/riscv-software-src/riscv-tests) suite to .hex files. You can also use the **Intel Hex** file format by using the official RISC-V toolchain and compiler [riscv-gnu-toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain), containing some specific tools allowing the generation of **Intel Hex** file format.
 
+#### 🛠️ Using the Conversion Script
+If you have your own `.dump` files and want to generate a Digital-compatible Instruction Hex file, use the provided bash script:
+
+```bash
+chmod +x convert_to_hex.sh
+./convert_to_hex.sh path/to/your_file.dump
+```
 ### 3. Running the Simulation
 1. Click the **Start** button (the green "Play" triangle) in the toolbar.
 2. Toggle the `Reset` input to initialize the PC to `0x80000000`.
