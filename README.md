@@ -28,34 +28,31 @@ By default, the ROM is already loaded by the [Dhrystone](https://en.wikipedia.or
 
 #### Method A: Manual Entry
 Use this for testing a specific instruction, short tests, or debugging:
-1. Reaching the light-blue **ROM** component by right-clicking (you need probably to select `instructions rom.dig`), then by clicking the **Open Circuit** button.
+1. Reaching the light-blue **ROM** component by right-clicking (you probably need to select `instructions rom.dig`), then by clicking the **Open Circuit** button.
 2. The circuit `instructions rom.dig` will open, right-click on **ROM**.
 3. On **Basic** onglet you have to click the **edit** button.
 4. Enter your hex machine code values manually into the table.
 5. Click **OK**, and don't forget to save `instructions rom.dig` circuit.
 
 Using this method, there are 2 files in `circuits` directory, containing the adequate code for testing specific instructions and small programs:
-1. [all instructions test.asm](circuits/all instructions test.asm): a small program with the corresponding hexadecimal machine code for each instruction, that tests all the instructions.
+1. [all_instructions_test.asm](circuits/all_instructions_test.asm): a small program with the corresponding hexadecimal machine code for each instruction, that tests all the instructions.
 2. [test_ROM.hex](circuits/test_ROM.hex): a collection of small programs with the corresponding hexadecimal machine code, designed to test specific instructions.
 
 #### Method B: Loading a Hex File
 This is the fastest way to run large programs. Digital supports **Logisim v2.0 raw** and **Intel Hex** file formats.
-1. **Right-click** the light-blue **ROM** component.
-2. Click the **Folder Icon** 📂 next to the "Data File" field.
-3. Select your `.hex` file (found in the `/tests` folder).
-4. Ensure the ROM is set to at least 32-bit data width.
+1. Reaching the light-blue **ROM** component by right-clicking (you probably need to select `instructions rom.dig`), then by clicking the **Open Circuit** button.
+2. The circuit `instructions rom.dig` will open, right-click on **ROM**.
+3. On **Advanced** onglet you have to check the **reload at model start** box.
+4. Select your `.hex` in the **file** field.
+5. Click **OK**, and don't forget to save `instructions rom.dig` circuit.
 
-### 3. Loading Data Memory (Data RAM)
-Since this is a Harvard Architecture, tests that use `lw` or `lb` (like `ma_data` or `lb`) require a separate data file loaded into the **RAM**:
-1. **Right-click** the light-blue **RAM** component.
-2. Load the corresponding `dmem.hex` file using the folder icon.
+For this case, you have the directories `tests` and `benchmarks` containing many .hex files that could be loaded and executed directly. It is also possible to generate your own .hex file following one of the two formats **Logisim v2.0 raw** or **Intel Hex**. Files like **Logisim v2.0 raw** could be generated with the help of the linux script [convert_to_hex.sh](tests/convert_to_hex.sh) in `tests` directory. It was used to convert .dump files of the [riscv-tests](https://github.com/riscv-software-src/riscv-tests) suite to .hex files. You can also use the **Intel Hex** file format by using the official RISC-V toolchain and compiler [riscv-gnu-toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain), containing some specific tools allowing the generation of **Intel Hex** file format.
 
-### 4. Running the Simulation
+### 3. Running the Simulation
 1. Click the **Start** button (the green "Play" triangle) in the toolbar.
 2. Toggle the `Reset` input to initialize the PC to `0x80000000`.
-3. Monitor the **`tohost`** monitor (Address `0x80001000`).
-   - If the value becomes `1`: **PASS** ✅
-   - If the value is an odd number > 1: **FAIL** ❌
+3. Toggle the clock `clk` input to run the simulation step-by-step.
+4. It is also possible to fix a frequency speed for the clock and let the simulation run automatically.
 
 ## Instruction Set Architecture (ISA)
 
