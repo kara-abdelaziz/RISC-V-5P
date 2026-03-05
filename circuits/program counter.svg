@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="-80 -80 360 200"
+   version="1.1"
+   id="svg29"
+   sodipodi:docname="program counter.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata33">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs31" />
+  <sodipodi:namedview
+     showgrid="true"
+     id="namedview4"
+     inkscape:zoom="2.254885"
+     inkscape:cx="-199.60695"
+     inkscape:cy="211.91224"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g17">
+    <inkscape:grid
+       type="xygrid"
+       empspacing="4"
+       spacingx="5"
+       spacingy="5"
+       id="grid2" />
+  </sodipodi:namedview>
+  <rect
+     x="-340"
+     y="-160"
+     width="240"
+     height="80"
+     id="rect6"
+     style="fill:#fff007;fill-opacity:0.78431373;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <g
+     id="g12"
+     transform="rotate(89.842415,127.35276,-43.866848)">
+    <circle
+       id="pin:clock"
+       cx="10.535171"
+       cy="361.91135"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="-384.75574"
+       y="28.8445"
+       id="text10"
+       style="font-size:18px;fill:#808080"
+       transform="rotate(-90)">clock</text>
+  </g>
+  <g
+     id="g22"
+     transform="rotate(0.321001,28436.394,-60458.917)">
+    <circle
+       id="pin:new-addr"
+       cx="0"
+       cy="40"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="46"
+       id="text20"
+       style="font-size:18px;fill:#808080">new-addr</text>
+  </g>
+  <g
+     id="g27"
+     transform="rotate(-0.273301,-25194.045,63095.307)">
+    <circle
+       id="pin:instr-addr"
+       cx="200"
+       cy="0"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="196"
+       y="6"
+       id="text25"
+       style="font-size:18px;text-anchor:end;fill:#808080">instr-addr</text>
+  </g>
+  <g
+     id="g27-8"
+     transform="translate(-179.87002,-141.51395)">
+    <circle
+       id="pin:enable"
+       cx="0"
+       cy="60"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="-30"
+       y="52"
+       id="text25-7"
+       style="font-size:18px;fill:#808080">enable</text>
+  </g>
+  <g
+     transform="translate(-225,-69.999998)"
+     id="g17">
+    <circle
+       style="fill:#0000b2"
+       id="pin:reset"
+       cx="-34.591564"
+       cy="-11.043712"
+       r="3" />
+    <text
+       style="font-size:18px;fill:#808080"
+       font-size="18"
+       x="-58.530907"
+       y="-17.461197"
+       id="text15">reset</text>
+  </g>
+</svg>

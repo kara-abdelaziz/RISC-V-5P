@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<truthTable>
+  <variables>
+    <variable name="I4"/>
+    <variable name="I3"/>
+    <variable name="I2"/>
+    <variable name="I1"/>
+    <variable name="I0"/>
+  </variables>
+  <results>
+    <result>
+      <name>ALU</name>
+      <values class="BoolTable">1XXX01XX1XXX0XXXXXXXXXXX00XXXXXX</values>
+    </result>
+    <result>
+      <name>RAM</name>
+      <values class="BoolTable">0XXX00XX1XXX00XXXXXXXXXX00X0XXXX</values>
+    </result>
+    <result>
+      <name>RF1</name>
+      <values class="BoolTable">1XXX00XXXXXX00XXXXXXXXXXX1X1XXXX</values>
+    </result>
+    <result>
+      <name>RF0</name>
+      <values class="BoolTable">0XXX11XXXXXX10XXXXXXXXXXX1X1XXXX</values>
+    </result>
+    <result>
+      <name>SUM</name>
+      <values class="BoolTable">XXXXXXXXXXXXXXXXXXXXXXXX1XX0XXXX</values>
+    </result>
+  </results>
+</truthTable>

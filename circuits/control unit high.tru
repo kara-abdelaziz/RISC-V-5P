@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<truthTable>
+  <variables>
+    <variable name="I4"/>
+    <variable name="I3"/>
+    <variable name="I2"/>
+    <variable name="I1"/>
+    <variable name="I0"/>
+  </variables>
+  <results>
+    <result>
+      <name>PC1</name>
+      <values class="BoolTable">1XXX11XX1XXX11XXXXXXXXXX10X0XXXX</values>
+    </result>
+    <result>
+      <name>PC0</name>
+      <values class="BoolTable">0XXX00XX0XXX00XXXXXXXXXX10X1XXXX</values>
+    </result>
+    <result>
+      <name>RFw</name>
+      <values class="BoolTable">1XXX11XX0XXX11XXXXXXXXXX01X1XXXX</values>
+    </result>
+    <result>
+      <name>A</name>
+      <values class="BoolTable">1XXX10XX1XXX1XXXXXXXXXXX11XXXXXX</values>
+    </result>
+    <result>
+      <name>B1</name>
+      <values class="BoolTable">0XXX01XX1XXX0XXXXXXXXXXX00XXXXXX</values>
+    </result>
+    <result>
+      <name>B0</name>
+      <values class="BoolTable">1XXX11XX0XXX0XXXXXXXXXXX01XXXXXX</values>
+    </result>
+  </results>
+</truthTable>

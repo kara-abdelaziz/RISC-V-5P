@@ -1,0 +1,386 @@
+PCmux-RFw-Amux-Bmux-ALUmux-RAMw-RFmux-SUMmux
+
+op-imm   [00-100-11] : 10-1-1-01-0-0-01-X
+op       [01-100-11] : 10-1-1-00-0-0-01-X
+store    [01-000-11] : 10-0-1-10-1-1-XX-X
+load     [00-000-11] : 10-1-1-01-1-0-10-X
+branch   [11-000-11] : 11-0-1-00-0-0-XX-1
+lui      [01-101-11] : 10-1-X-XX-X-0-00-X
+auipc    [00-101-11] : 10-1-0-11-1-0-01-X
+jal      [11-011-11] : 01-1-X-XX-X-0-11-0
+jalr     [11-001-11] : 00-1-1-01-0-0-11-X
+MISC-mem [00-011-11]
+SYSTEM   [11-100-11]
+
+
+
+#test op instructions
+
+.text 
+    addi   t0 , t0, 5  ->  0x00528293
+    addi   t1 , t1, 6  ->  0x00630313
+    
+    add    t2, t0, t1  ->  0x006283b3
+    sub    t3, t0, t1  ->  0x40628e33
+    and    t4, t0, t1  ->  0x0062feb3
+    or     t5, t0, t1  ->  0x0062ef33
+    xor    t6, t0, t1  ->  0x0062cfb3
+
+    add   t2 , t2, x0  ->  0x000383b3
+    add   t3 , t3, x0  ->  0x000e0e33
+    add   t4 , t4, x0  ->  0x000e8eb3
+    add   t5 , t5, x0  ->  0x000f0f33
+    add   t6 , t6, x0  ->  0x000f8fb3
+
+
+#test op-imm instructions
+
+.text 
+    addi   t0 , t0, 5  ->  0x00528293
+    
+    addi   t2, t0, 6   ->  0x00628393
+    andi   t4, t0, 6   ->  0x0062fe13
+    ori    t5, t0, 6   ->  0x0062ee93
+    xori   t6, t0, 6   ->  0x0062cf13
+
+    addi   t2 , t2, 0  ->  0x00038393
+    addi   t3 , t3, 0  ->  0x000e0e13
+    addi   t4 , t4, 0  ->  0x000e8e93
+    addi   t5 , t5, 0  ->  0x000f0f13
+
+
+#test store instructions
+
+.text
+    addi   t0 , t0, 5 -> 0x00528293
+    addi   t1 , t1, 4 -> 0x00430313  
+    
+    sb     t0, 1(t1)  -> 0x005300a3   
+    sh     t0, 6(t1)  -> 0x00531323    
+    sw     t0, 8(t1)  -> 0x00532423
+
+    lw     t0, 4(x0)  -> 0x00402283  
+    lw     t0, 8(x0)  -> 0x00802283    
+    lw     t0, 12(x0) -> 0x00c02283
+
+
+#test load instructions
+
+.text
+    addi   t0 , t0,-1  -> 0xfff28293
+    addi   t1 , t1, 4  -> 0x00430313
+  
+    sw     t0, 8(x0)   -> 0x00502423
+
+    lw     t2, 4(t1)   -> 0x00432383
+    lh     t3, 6(t1)   -> 0x00631e03
+    lhu    t4, 6(t1)   -> 0x00635e83
+    lb     t5, 7(t1)   -> 0x00730f03
+    lbu    t6, 7(t1)   -> 0x00734f83
+
+
+#test shift instructions
+
+.text
+    addi   t0 , t0,-1  -> 0xfff28293
+    addi   t1 , t1, 6  -> 0x00630313
+  
+    sll    t2, t0, t1  -> 0x006293b3
+    srl    t2, t0, t1  -> 0x0062d3b3
+    sra    t2, t0, t1  -> 0x4062d3b3
+
+    slli   t2, t0, 30  -> 0x01e29393
+    srli   t2, t0, 30  -> 0x01e2d393
+    srai   t2, t0, 30  -> 0x41e2d393
+
+
+#test branch equality instructions
+
+.text
+    addi   t0 , t0, 3   -> 0x00328293
+    addi   t0 , t0, -1  -> 0xfff28293
+    beq    t0 , x0, 8   -> 0x00028463
+    nop                 -> 0x00000013
+    bne    t0 , x0,-12  -> 0xfe029ae3
+
+
+#test branch diffirent instructions
+
+.text
+    addi   t0 , t0, 2   -> 0x00228293
+    addi   t0 , t0, -1  -> 0xfff28293
+    blt    t0 , x0, 8   -> 0x0002c463 
+    nop                 -> 0x00000013
+    bge    t0 , x0,-12  -> 0xfe02dae3
+
+
+#test branch unsigned instructions
+
+.text
+    addi   t0 , t0, -1  -> 0xfff28293
+    addi   t1 , t1, 1   -> 0x00130313
+    bltu   t0 , t1, 12  -> 0x0062e663
+    addi   t0 , t0, 1   -> 0x00128293
+    addi   t1 , t1, -1  -> 0xfff30313
+    bgeu   t0 , t1,-16  -> 0xfe62f8e3
+
+
+#test lui instruction
+
+.text
+    lui    t0, 703710    -> 0xabcde2b7
+    addi   t0, t0, 819   -> 0x33328293
+    add    t0, t0, x0    -> 0x000282b3
+
+
+#test auipc instruction
+
+.text
+    nop                 -> 0x00000013
+    nop                 -> 0x00000013
+    nop                 -> 0x00000013
+    auipc  t0, 703710   -> 0xabcde297
+    add    t0, t0, x0   -> 0x000282b3
+
+
+#test jal instruction
+
+.text
+    nop                 -> 0x00000013
+    nop                 -> 0x00000013
+    jal    t0, 1        -> 0x008002ef (0x000002ef jump to @:8, 0xff9ff2ef jump to @:0)
+    nop                 -> 0x00000013
+    add    t0, t0, x0   -> 0x000282b3 (ff9ff2ef jump to @:8)
+
+
+#test jalr instruction
+
+.text
+    addi   t1, t1, 8    -> 0x00830313
+    jalr   t0, 8(t1)    -> 0x008302e7
+    nop                 -> 0x00000013
+    nop                 -> 0x00000013
+    add    t0, t0, x0   -> 0x000282b3
+
+#test forwarding
+
+.text 
+    addi   t0 , t0,-1  -> 0xfff28293
+    sw     t0, 8(x0)   -> 0x00502423   
+
+    addi   t0 , t0, 5  -> 0x00528293
+    addi   t1 , t1, 6  -> 0x00630313
+    
+    add    t1, t0, t1  -> 0x00628333
+    lw     t1, 4(t0)   -> 0x0042a303
+    lui    t0, 703710  -> 0xabcde2b7
+    and    t1, t0, t1  -> 0x0062f333
+    lh     t3, 10(x0)  -> 0x00a01e03
+    add    t3, t3, t3  -> 0x01ce0e33
+
+#test infinite loop used for FPGA
+
+    addi   t0 , x0, 5  ->  0x00500293
+    addi   t1 , x0, 4  ->  0x00400313
+    
+    add    t2, t0, t1  ->  0x006283b3
+    sub    t3, t0, t1  ->  0x40628e33
+    and    t4, t0, t1  ->  0x0062feb3
+    or     t5, t0, t1  ->  0x0062ef33
+    xor    t6, t0, t1  ->  0x0062cfb3
+  
+    sb     t0, 1(t1)   ->  0x005300a3   
+    sh     t0, 6(t1)   ->  0x00531323    
+    sw     t0, 8(t1)   ->  0x00532423
+	
+    lw     t0, 4(x0)   ->  0x00402283  
+    lw     t0, 8(x0)   ->  0x00802283    
+    lw     t0, 12(x0)  ->  0x00c02283
+
+    jal    x0, -52     ->  0xfcdff06f
+
+# test the CSR registers
+
+    lui    t0, 0x00012345  ->  0x123452b7
+    addi   t0, t0, 0x678   ->  0x67828293
+
+    csrrw  t1, 0xF11, t0   ->  0xf1129373
+    csrrw  t2, 0xF12, t0   ->  0xf12293f3
+    csrrw  t3, 0xF13, t0   ->  0xf1329e73
+    csrrw  t4, 0xF14, t0   ->  0xf1429ef3
+    csrrw  t5, 0xF15, t0   ->  0xf1529f73
+
+    csrrs  s1, 0xF11, x0   ->  0xf11024f3
+    csrrs  s2, 0xF12, x0   ->  0xf1202973
+    csrrs  s3, 0xF13, x0   ->  0xf13029f3
+    csrrs  s4, 0xF14, x0   ->  0xf1402a73
+    csrrs  s5, 0xF15, x0   ->  0xf1502af3
+
+    csrrw  t1, 0x300, t0   ->  0x30029373
+    csrrw  t2, 0x301, t0   ->  0x301293f3
+    csrrw  t3, 0x304, t0   ->  0x30429e73  
+    csrrw  t4, 0x305, t0   ->  0x30529ef3
+    csrrw  t5, 0x310, t0   ->  0x31029f73
+
+    csrrs  s1, 0x300, x0   ->  0x300024f3
+    csrrs  s2, 0x301, x0   ->  0x30102973
+    csrrs  s3, 0x304, x0   ->  0x304029f3
+    csrrs  s4, 0x305, x0   ->  0x30502a73
+    csrrs  s5, 0x310, x0   ->  0x31002af3
+
+    csrrw  t1, 0x340, t0   ->  0x34029373
+    csrrw  t2, 0x341, t0   ->  0x341293f3
+    csrrw  t3, 0x342, t0   ->  0x34229e73
+    csrrw  t4, 0x343, t0   ->  0x34329ef3
+    csrrw  t5, 0x344, t0   ->  0x34429f73
+
+    csrrs  s1, 0x340, x0   ->  0x340024f3
+    csrrs  s2, 0x341, x0   ->  0x34102973
+    csrrs  s3, 0x342, x0   ->  0x342029f3
+    csrrs  s4, 0x343, x0   ->  0x34302a73
+    csrrs  s5, 0x344, x0   ->  0x34402af3
+
+    csrrw  t1, 0xB00, t0   ->  0xB0029373
+    csrrw  t2, 0xB80, t0   ->  0xB80293f3
+    csrrw  t3, 0xB02, t0   ->  0xB0229e73
+    csrrw  t4, 0xB82, t0   ->  0xB8229ef3
+
+    csrrs  s1, 0xB00, x0   ->  0xB00024f3
+    csrrs  s2, 0xB80, x0   ->  0xB8002973
+    csrrs  s3, 0xB02, x0   ->  0xB02029f3
+    csrrs  s4, 0xB82, x0   ->  0xB8202a73
+
+# testing mstatus
+
+    addi   t0, t0, 0x0FF   ->  0x0ff28293
+    
+    csrrw  t1, 0x300, t0   ->  0x30029373
+    csrrs  t1, 0x300, x0   ->  0x30002373
+
+    csrrw  t1, 0x300, x0   ->  0x30001373
+    csrrs  t1, 0x300, x0   ->  0x30002373
+
+# test zicsr extension instructions
+
+    lui    t0, 0x00012345  ->  0x123452b7
+    addi   t0, t0, 0x678   ->  0x67828293
+    addi   t1, t1, 0x55    ->  0x05530313
+    addi   t2, t2, 0xCC    ->  0x0cc38393
+
+    csrrw  s1, 0x340, t0   ->  0x340294f3
+    csrrs  s1, 0x340, x0   ->  0x340024f3
+
+    csrrwi s2, 0x341, 0x15 ->  0x341ad973
+    csrrs  s2, 0x341, x0   ->  0x34102973
+
+    csrrs  s3, 0x340, t1   ->  0x340329f3
+    csrrs  s3, 0x340, x0   ->  0x340029f3
+
+    csrrsi s4, 0x342, 0x15 ->  0x342aea73
+    csrrs  s4, 0x342, x0   ->  0x34202a73
+
+    csrrw  s5, 0x340, t0   ->  0x34029af3
+    csrrc  s5, 0x340, t2   ->  0x3403baf3
+    csrrs  s5, 0x340, x0   ->  0x34002af3
+
+    csrrw  s6, 0x340, t0   ->  0x34029b73
+    csrrci s6, 0x340, 0x15 ->  0x340afb73
+    csrrs  s6, 0x340, x0   ->  0x34002b73
+
+# test fence instruction
+
+    fence   ->  0x1234560F
+
+# test ecall and ebreak instructions
+
+    ecall    ->  0x00000073
+    ebreak   ->  0x00100073
+
+# test wfi instruction
+
+    nop     ->  0x00000013
+    nop     ->  0x00000013
+    nop     ->  0x00000013
+    wfi     ->  0x10500073   // the cpu should automatically wake up after 1024 cycles
+    nop     ->  0x00000013   // 8 cycles for this test
+    nop     ->  0x00000013
+    nop     ->  0x00000013
+
+# test mret instruction
+
+    addi   t0 , x0, 0x80   ->  0x08000293
+    addi   t1 , x0, 0x8    ->  0x00c00313
+    csrrw  x0, 0x300, t0   ->  0x30029073
+    csrrs  t2, 0x300, x0   ->  0x300023f3
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    csrrw  x0, 0x341, t1   ->  0x34131073
+    mret                   ->  0x30200073
+
+#test Illegal instructions
+
+  0x80000000 :
+    lui    t0, 0xfff80000  ->  0x800002b7   // li t0, 0x80000080 
+    addi   t0, t0, 0x80    ->  0x08028293
+    csrrw  x0, 0x305, t0   ->  0x30529073   // mtvec = 0x80000040 
+    addi   t1, x0, 0x88    ->  0x08800313   
+    csrrw  x0, 0x300, t1   ->  0x30031073   // set MIE and MPIE
+    csrrs  x0, 0x300, x0   ->  0x30002073   // read mstatus
+    nop                    ->  0x00000013
+    Illegal instr          ->  0xFFFFFFFF   // Illegal opcode
+    nop                    ->  0x00000013
+    csrrs  x0, 0x400, x0   ->  0x40002073   // CSR access fault
+    nop                    ->  0x00000013
+    ecall                  ->  0x00000073   // ecall
+    nop                    ->  0x00000013
+    ebreak                 ->  0x00100073   // ebreak
+    nop                    ->  0x00000013
+    jalr x0, 0x333(x0)     ->  0x33300067   // instruction misaligned address
+    nop                    ->  0x00000013   // instruction access fault tested artificially
+    nop                    ->  0x00000013 
+    lw     t0, 2(t1)       ->  0x00232283   // load address misaligned
+    lh     t0, 5(t1)       ->  0x00531283    
+    lhu    t0, 1(t1)       ->  0x00135283  
+    nop                    ->  0x00000013
+    sw     t0, 2(t1)       ->  0x00532123   // store address misaligned
+    sh     t0, 5(t1)       ->  0x005312a3
+    nop                    ->  0x00000013
+    sh     t0, 5(t1)       ->  0x005312a3   // 2 conflecting exceptions
+    Illegal instr          ->  0xFFFFFFFF 
+    nop                    ->  0x00000013
+
+  0x80000080 :
+    csrrs  x0, 0x300, x0   ->  0x30002073   // read mstatus
+    csrrs  x0, 0x342, x0   ->  0x34202073   // read mcause
+    csrrs  x0, 0x343, x0   ->  0x34302073   // read mtval    
+    csrrs  t2, 0x341, x0   ->  0x341023f3   // read mepc
+    addi   t2, t2, 4       ->  0x00438393   // mepc + 4
+    csrrw  x0, 0x341, t2   ->  0x34139073   // write mepc
+    mret                   ->  0x30200073
+
+#test instructions count
+
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    csrrs  x0, 0xB02, x0   ->  0xB0202073   // read the instructions count
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    lw     t0, 4(x0)       ->  0x00402283   // triggering stalling mechanism
+    addi   t0 , t0, 5      ->  0x00528293
+    csrrs  x0, 0xB00, x0   ->  0xB0002073   // read the cycles count
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    lw     t0, 2(t1)       ->  0x00232283   // triggering flush mechanism
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+    nop                    ->  0x00000013
+

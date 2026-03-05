@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="-80 -80 220 460"
+   version="1.1">
+  <sodipodi:namedview showgrid="true">
+    <inkscape:grid
+       type="xygrid"
+       empspacing="4"
+       spacingx="5"
+       spacingy="5" />
+  </sodipodi:namedview>
+  <rect stroke="black" stroke-width="4" fill="#ffffb4" fill-opacity="0.78431374" x="0" y="-10" width="60" height="320"/>
+    <text id="label" fill="#000000" font-size="24" text-anchor="middle" x="30" y="-20">Label</text>
+  <g>
+    <circle fill="#0000b2" id="pin:A-op_ID" cx="0" cy="0" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="6">A-op_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:B-op_ID" cx="0" cy="20" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="26">B-op_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:RF-B_ID" cx="0" cy="40" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="46">RF-B_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:upper-imm_ID" cx="0" cy="60" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="66">upper-imm_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:PC_ID" cx="0" cy="80" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="86">PC_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:clock" cx="0" cy="100" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="106">clock</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:enable" cx="0" cy="120" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="126">enable</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:RF-mux_ID" cx="0" cy="140" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="146">RF-mux_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:RAM-w_ID" cx="0" cy="160" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="166">RAM-w_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:ALU-mux_ID" cx="0" cy="180" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="186">ALU-mux_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:Fct3_ID" cx="0" cy="200" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="206">Fct3_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:[30]_ID" cx="0" cy="220" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="226">[30]_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:[5]_ID" cx="0" cy="240" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="246">[5]_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:RF-w_ID" cx="0" cy="260" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="266">RF-w_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:RF-w-addr_ID" cx="0" cy="280" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="286">RF-w-addr_ID</text>
+  </g>
+  <g>
+    <circle fill="#0000b2" id="pin:reset" cx="0" cy="300" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="306">reset</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:A-op_EXE" cx="60" cy="0" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="6">A-op_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:B-op_EXE" cx="60" cy="20" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="26">B-op_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:RF-B_EXE" cx="60" cy="40" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="46">RF-B_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:upper-imm_EXE" cx="60" cy="60" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="66">upper-imm_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:PC_EXE" cx="60" cy="80" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="86">PC_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:RF-mux_EXE" cx="60" cy="100" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="106">RF-mux_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:RAM-w_EXE" cx="60" cy="120" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="126">RAM-w_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:ALU-mux_EXE" cx="60" cy="140" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="146">ALU-mux_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:Fct3_EXE" cx="60" cy="160" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="166">Fct3_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:[30]_EXE" cx="60" cy="180" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="186">[30]_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:[5]_EXE" cx="60" cy="200" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="206">[5]_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:RF-w_EXE" cx="60" cy="220" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="226">RF-w_EXE</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:RF-w-addr_EXE" cx="60" cy="240" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="56" y="246">RF-w-addr_EXE</text>
+  </g>
+</svg>

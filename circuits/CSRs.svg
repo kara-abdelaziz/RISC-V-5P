@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="-80 -80 220 360"
+   version="1.1"
+   id="svg85"
+   sodipodi:docname="CSRs.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata89">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs87" />
+  <sodipodi:namedview
+     showgrid="true"
+     id="namedview4"
+     inkscape:zoom="1.3111111"
+     inkscape:cx="-453.73508"
+     inkscape:cy="505.65457"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg85">
+    <inkscape:grid
+       type="xygrid"
+       empspacing="4"
+       spacingx="5"
+       spacingy="5"
+       id="grid2" />
+  </sodipodi:namedview>
+  <rect
+     x="-500"
+     y="-260"
+     width="280"
+     height="440"
+     id="rect6"
+     style="fill:#ffff00;fill-opacity:0.78431373;stroke:#000000;stroke-width:4.15099621;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+  <g
+     id="g12"
+     transform="translate(-498.33051,-59.325061)">
+    <circle
+       id="pin:mepc"
+       cx="0"
+       cy="0"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="6"
+       id="text10"
+       style="font-size:18px;fill:#808080">mepc</text>
+  </g>
+  <g
+     id="g17"
+     transform="translate(-498.33052,-118.65012)">
+    <circle
+       id="pin:mcause"
+       cx="0"
+       cy="20"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="26"
+       id="text15"
+       style="font-size:18px;fill:#808080">mcause</text>
+  </g>
+  <g
+     id="g22"
+     transform="translate(-498.33051,21.57275)">
+    <circle
+       id="pin:CSR write"
+       cx="0"
+       cy="40"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="46"
+       id="text20"
+       style="font-size:18px;fill:#808080">CSR write</text>
+  </g>
+  <g
+     id="g27"
+     transform="rotate(90,-70.098058,-328.36118)">
+    <circle
+       id="pin:clock"
+       cx="0"
+       cy="60"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="66"
+       id="text25"
+       style="font-size:18px;fill:#808080">clock</text>
+  </g>
+  <g
+     id="g42"
+     transform="translate(-499.40915,-138.0656)">
+    <circle
+       id="pin:mtval"
+       cx="0"
+       cy="120"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="126"
+       id="text40"
+       style="font-size:18px;fill:#808080">mtval</text>
+  </g>
+  <g
+     id="g67"
+     transform="translate(-280.44574,61.482338)">
+    <circle
+       id="pin:CSR read"
+       cx="60"
+       cy="0"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="56"
+       y="6"
+       id="text65"
+       style="font-size:18px;text-anchor:end;fill:#808080">CSR read</text>
+  </g>
+  <g
+     id="g72"
+     transform="rotate(90,-229.30149,-110.84184)">
+    <circle
+       id="pin:illegal op"
+       cx="60"
+       cy="20"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="56"
+       y="26"
+       id="text70"
+       style="font-size:18px;text-anchor:end;fill:#808080">illegal op</text>
+  </g>
+  <g
+     id="g77"
+     transform="translate(-281.52438,-58.246428)">
+    <circle
+       id="pin:mtvec"
+       cx="60"
+       cy="40"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="56"
+       y="46"
+       id="text75"
+       style="font-size:18px;text-anchor:end;fill:#808080">mtvec</text>
+  </g>
+  <g
+     id="g32-4"
+     transform="translate(-496.6346,-238.91195)">
+    <circle
+       id="pin:csr address"
+       cx="0"
+       cy="80"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="86"
+       id="text30-2"
+       style="font-size:18px;fill:#808080">csr address</text>
+  </g>
+  <g
+     id="g82"
+     transform="translate(-281.64594,-118.98739)">
+    <circle
+       id="pin:mepc read"
+       cx="60"
+       cy="60"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="56"
+       y="66"
+       id="text80"
+       style="font-size:18px;text-anchor:end;fill:#808080">mepc read</text>
+  </g>
+  <g
+     id="g37-5"
+     transform="rotate(90,-30.03655,-289.67227)">
+    <circle
+       id="pin:write"
+       cx="0"
+       cy="100"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="106"
+       id="text35-4"
+       style="font-size:18px;fill:#808080">write</text>
+  </g>
+  <g
+     id="g47-9"
+     transform="rotate(90,19.407211,-238.34329)">
+    <circle
+       id="pin:instr cnt"
+       cx="0"
+       cy="140"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="146"
+       id="text45-0"
+       style="font-size:18px;fill:#808080">instr cnt</text>
+  </g>
+  <g
+     id="g57-5"
+     transform="rotate(90,70.018137,-189.2428)"
+     inkscape:transform-center-x="115.41421"
+     inkscape:transform-center-y="-112.1783">
+    <circle
+       id="pin:trap"
+       cx="0"
+       cy="180"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="186"
+       id="text55-0"
+       style="font-size:18px;fill:#808080">trap</text>
+  </g>
+  <g
+     id="g62-6"
+     transform="rotate(90,99.600026,-159.66174)">
+    <circle
+       id="pin:mret"
+       cx="0"
+       cy="200"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="206"
+       id="text60-9"
+       style="font-size:18px;fill:#808080">mret</text>
+  </g>
+</svg>

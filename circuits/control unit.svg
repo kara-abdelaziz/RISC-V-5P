@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="-80 -80 320 300"
+   version="1.1"
+   id="svg54"
+   sodipodi:docname="control unit.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata58">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs56" />
+  <sodipodi:namedview
+     showgrid="true"
+     id="namedview4"
+     inkscape:zoom="1.5733334"
+     inkscape:cx="-15.463118"
+     inkscape:cy="47.269675"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg54">
+    <inkscape:grid
+       type="xygrid"
+       empspacing="4"
+       spacingx="5"
+       spacingy="5"
+       id="grid2" />
+  </sodipodi:namedview>
+  <rect
+     style="opacity:1;fill:#0061ff;fill-opacity:1;stroke:#000000;stroke-width:5.29519606;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect868"
+     width="400"
+     height="158.95181"
+     x="-100"
+     y="80"
+     ry="0" />
+  <g
+     id="g12"
+     transform="translate(-98.875106,161.15214)">
+    <circle
+       id="pin:instr"
+       cx="0"
+       cy="0"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="6"
+       id="text10"
+       style="font-size:18px;fill:#808080">instr</text>
+  </g>
+  <g
+     id="g17"
+     transform="rotate(90,61.397288,140.06807)">
+    <circle
+       id="pin:PC_mux"
+       cx="160"
+       cy="0"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="156"
+       y="6"
+       id="text15"
+       style="font-size:18px;text-anchor:end;fill:#808080">PC_mux</text>
+  </g>
+  <g
+     id="g22"
+     transform="rotate(90,30.699843,109.0559)">
+    <circle
+       id="pin:RF_w"
+       cx="160"
+       cy="20"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="156"
+       y="26"
+       id="text20"
+       style="font-size:18px;text-anchor:end;fill:#808080">RF_w</text>
+  </g>
+  <g
+     id="g27"
+     transform="rotate(90,-39.232375,39.968024)">
+    <circle
+       id="pin:A_mux"
+       cx="160"
+       cy="40"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="156"
+       y="46"
+       id="text25"
+       style="font-size:18px;text-anchor:end;fill:#808080">A_mux</text>
+  </g>
+  <g
+     id="g32"
+     transform="rotate(90,-9.39531,69.541813)">
+    <circle
+       id="pin:B_mux"
+       cx="160"
+       cy="60"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="156"
+       y="66"
+       id="text30"
+       style="font-size:18px;text-anchor:end;fill:#808080">B_mux</text>
+  </g>
+  <g
+     id="g37"
+     transform="rotate(90,21.208986,99.510528)">
+    <circle
+       id="pin:ALU_mux"
+       cx="160"
+       cy="80"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="156"
+       y="86"
+       id="text35"
+       style="font-size:18px;text-anchor:end;fill:#808080">ALU_mux</text>
+  </g>
+  <g
+     id="g42"
+     transform="translate(71.236152,124.80667)">
+    <circle
+       id="pin:RAM_w"
+       cx="113.61621"
+       cy="-89.506836"
+       r="3"
+       transform="rotate(90)"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="109.61621"
+       y="-83.506836"
+       id="text40"
+       transform="rotate(90)"
+       style="font-size:18px;text-anchor:end;fill:#808080">RAM_w</text>
+  </g>
+  <g
+     id="g47"
+     transform="rotate(90,60.449914,138.37913)">
+    <circle
+       id="pin:RF_mux"
+       cx="160"
+       cy="120"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="156"
+       y="126"
+       id="text45"
+       style="font-size:18px;text-anchor:end;fill:#808080">RF_mux</text>
+  </g>
+  <g
+     id="g52"
+     transform="rotate(90,151.71532,229.30508)">
+    <circle
+       id="pin:SUM_mux"
+       cx="160"
+       cy="140"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="156"
+       y="146"
+       id="text50"
+       style="font-size:18px;text-anchor:end;fill:#808080">SUM_mux</text>
+  </g>
+</svg>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="-80 -80 200 220"
+   version="1.1"
+   id="svg39"
+   sodipodi:docname="IF_ID register.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata43">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs41" />
+  <sodipodi:namedview
+     showgrid="true"
+     id="namedview4"
+     inkscape:zoom="2.1454546"
+     inkscape:cx="-101.94313"
+     inkscape:cy="-728.27348"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g32-6">
+    <inkscape:grid
+       type="xygrid"
+       empspacing="4"
+       spacingx="5"
+       spacingy="5"
+       id="grid2" />
+  </sodipodi:namedview>
+  <rect
+     style="opacity:1;fill:#e600ff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect850"
+     width="40.834991"
+     height="1240"
+     x="-40.12664"
+     y="-300" />
+  <g
+     id="g22"
+     transform="rotate(90,-201.73445,129.63007)">
+    <circle
+       id="pin:PC_IF"
+       cx="309.02542"
+       cy="-32.245766"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="-327.42523"
+       y="46.741379"
+       id="text20"
+       style="font-size:18px;fill:#808080"
+       transform="scale(-1)">PC_IF</text>
+  </g>
+  <g
+     id="g27"
+     transform="rotate(90,-169.48167,105.83862)">
+    <circle
+       id="pin:Instr_IF"
+       cx="-15.381356"
+       cy="-22.966108"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="-5.3187904"
+       y="38.758305"
+       id="text25"
+       style="font-size:18px;fill:#808080"
+       transform="scale(-1)">Instr_IF</text>
+  </g>
+  <g
+     id="g32"
+     transform="translate(-102.69075,527.57465)">
+    <circle
+       id="pin:PC_ID"
+       cx="104.12484"
+       cy="112.76387"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="129.30214"
+       y="-80.08297"
+       id="text30"
+       style="font-size:18px;text-anchor:end;fill:#808080"
+       transform="rotate(90)">PC_ID</text>
+  </g>
+  <g
+     id="g37"
+     transform="rotate(90,-99.63108,120.60142)">
+    <circle
+       id="pin:Instr_ID"
+       cx="40"
+       cy="20"
+       r="3"
+       style="fill:#b20000" />
+    <text
+       font-size="18"
+       x="61.078163"
+       y="43.205845"
+       id="text35"
+       style="font-size:18px;text-anchor:end;fill:#808080">Instr_ID</text>
+    <g
+       id="g32-6"
+       transform="rotate(-90,425.79265,-228.72062)">
+      <circle
+         id="pin:reset"
+         cx="134.85593"
+         cy="45.508476"
+         r="3"
+         style="fill:#0000b2" />
+      <text
+         font-size="18"
+         x="-52.967453"
+         y="151.75179"
+         id="text30-1"
+         style="font-size:18px;fill:#808080"
+         transform="rotate(-87.721684)">reset</text>
+    </g>
+  </g>
+  <g
+     id="g42"
+     transform="rotate(90,199.75435,-99.217322)">
+    <circle
+       id="pin:clock"
+       cx="0"
+       cy="120"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="126"
+       id="text40"
+       style="font-size:18px;fill:#808080">clock</text>
+  </g>
+  <g
+     id="g47-0"
+     transform="rotate(-90,389.52788,548.70798)">
+    <circle
+       id="pin:enable"
+       cx="0"
+       cy="140"
+       r="3"
+       style="fill:#0000b2" />
+    <text
+       font-size="18"
+       x="4"
+       y="148"
+       id="text45-9"
+       style="font-size:18px;fill:#808080">enable</text>
+  </g>
+</svg>

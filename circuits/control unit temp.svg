@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="-80 -80 320 320"
+   version="1.1">
+  <sodipodi:namedview showgrid="true">
+    <inkscape:grid
+       type="xygrid"
+       empspacing="4"
+       spacingx="5"
+       spacingy="5" />
+  </sodipodi:namedview>
+  <rect stroke="black" stroke-width="4" fill="#ffffb4" fill-opacity="0.78431374" x="0" y="-10" width="160" height="180"/>
+    <text id="label" fill="#000000" font-size="24" text-anchor="middle" x="80" y="-20">Label</text>
+  <g>
+    <circle fill="#0000b2" id="pin:instr" cx="0" cy="0" r="3"/>
+    <text fill="#808080" font-size="18" x="4" y="6">instr</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:PC_mux" cx="160" cy="0" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="156" y="6">PC_mux</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:RF_w" cx="160" cy="20" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="156" y="26">RF_w</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:A_mux" cx="160" cy="40" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="156" y="46">A_mux</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:B_mux" cx="160" cy="60" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="156" y="66">B_mux</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:ALU_mux" cx="160" cy="80" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="156" y="86">ALU_mux</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:RAM_w" cx="160" cy="100" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="156" y="106">RAM_w</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:RF_mux" cx="160" cy="120" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="156" y="126">RF_mux</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:SUM_mux" cx="160" cy="140" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="156" y="146">SUM_mux</text>
+  </g>
+  <g>
+    <circle fill="#b20000" id="pin:illegal instruction" cx="160" cy="160" r="3"/>
+    <text fill="#808080" font-size="18" text-anchor="end" x="156" y="166">illegal instruction</text>
+  </g>
+</svg>
