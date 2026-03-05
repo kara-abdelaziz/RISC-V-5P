@@ -12,6 +12,46 @@ This open-source project is an implementation of the modern an growing in popula
 - ![](https://img.shields.io/badge/-999999?style=flat-square&color=999999) **Trap & Zicsr**
 - ![](https://img.shields.io/badge/-FFFFFF?style=flat-square&color=FFFFFF) **Muxes & Gluelogic**
 
+## 🚀 How to Run
+
+To simulate this processor, you will need the **Digital** logic simulator. 
+> [!TIP]
+> Download it here: [HNeemann/Digital](https://github.com/hneemann/Digital)
+
+### 1. Initial Setup
+1. Clone this repository: `git clone https://github.com/kara-abdelaziz/RISC-V-5P.git`, or download directly the zip file
+2. Open **Digital**.
+3. Go to `File -> Open` and select the main (top) circuit file `cpu.dig`.
+
+### 2. Loading the Program (Instruction ROM)
+There are two ways to load code into the Instruction Memory:
+
+#### Method A: Manual Entry
+Use this for short tests or debugging:
+1. **Right-click** the light-blue **ROM** component.
+2. Click on **Data**.
+3. Enter your hex machine code values manually into the table.
+4. Click **OK**.
+
+#### Method B: Loading a Hex File (Recommended)
+This is the fastest way to run the included `riscv-tests`. Digital supports **Logisim v2.0 raw** and **Intel Hex** formats.
+1. **Right-click** the light-blue **ROM** component.
+2. Click the **Folder Icon** 📂 next to the "Data File" field.
+3. Select your `.hex` file (found in the `/tests` folder).
+4. Ensure the ROM is set to at least 32-bit data width.
+
+### 3. Loading Data Memory (Data RAM)
+Since this is a Harvard Architecture, tests that use `lw` or `lb` (like `ma_data` or `lb`) require a separate data file loaded into the **RAM**:
+1. **Right-click** the light-blue **RAM** component.
+2. Load the corresponding `dmem.hex` file using the folder icon.
+
+### 4. Running the Simulation
+1. Click the **Start** button (the green "Play" triangle) in the toolbar.
+2. Toggle the `Reset` input to initialize the PC to `0x80000000`.
+3. Monitor the **`tohost`** monitor (Address `0x80001000`).
+   - If the value becomes `1`: **PASS** ✅
+   - If the value is an odd number > 1: **FAIL** ❌
+
 ## Instruction Set Architecture (ISA)
 
 The processor can be described as a 5-stage pipelined RISC-V RV32I processor; it is a 32-bit processor with integer operations. The complete set of implemented instructions is shown in the table below. The processor implements only machine mode (m-mode), including privileged instructions from the Zicsr extension (CSRRW, CSRRS, CSRRC, CSRRWI, CSRRSI, CSRRCI) and other privileged instructions such as ECALL, EBREAK, MRET, and WFI.
