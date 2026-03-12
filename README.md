@@ -84,5 +84,10 @@ The implementation of the pipeline is relatively complex, which implicitly encou
 
 To ensure the processor functions correctly according to the official RISC-V [specifications](https://riscv.atlassian.net/wiki/spaces/HOME/pages/16154769/RISC-V+Technical+Specifications), we chose the official test suite provided by the [organization](https://riscv.org/), called the [riscv-tests](https://github.com/riscv-software-src/riscv-tests) suite. This is a set of unit tests designed to verify the functional correctness of RISC-V architecture implementations, specifically its [instruction set](https://en.wikipedia.org/wiki/Instruction_set_architecture). These assembly language tests verify the conformity of the instructions to the preferred RV32I architecture to guarantee that the designed processor meets the RISC-V specifications. The RISC-V 5P processor successfully passes the tests, except for the fence.i instruction, which is not implemented, and memory misalignment, for which we opted for a simpler software solution rather than a hardware one.
 
+## Performance et benchmark
+
+The performance test used to evaluate the RISC-V 5P processor is called [Dhrystone](https://en.wikipedia.org/wiki/Dhrystone). In fact, it is a classic [benchmark](https://en.wikipedia.org/wiki/Benchmark_(computing)) for measuring integer computing performance and the efficiency of system programming on the processor. It is particularly well-known for evaluating small footprint processors and processors for [embedded systems](https://en.wikipedia.org/wiki/Embedded_system) and the [Internet of Things](https://en.wikipedia.org/wiki/Internet_of_things) (IoT). The unit of measurement for Dhrystone is generally expressed in Dhrystone MIPS (DMIPS), often normalized by MHz of clock frequency expressed in DMIPS/MHz. The benchmark result for the RISC-V 5P is 1.32 DMIPS/MHz, which is quite good. By comparison, the basic [Arduino](https://en.wikipedia.org/wiki/Arduino) processor is evaluated approximately at 0.3 DMIPS/MHz.
+
 ## Website link
+
 The website of the author of this project, that contains this project and many other similar projects : https://www.el-kalam.com/
